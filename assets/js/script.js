@@ -21,6 +21,11 @@ function validationPlay(){
         clearPossibilities();
         drawPossibilities();
         console.log(pointCounter(squares));
+        document.querySelector('.container').style.opacity = 0;
+        setTimeout(()=>{
+            document.querySelector('.container').style.display = 'none';
+        }, 200);
+        
     } else {
         play = false;
         console.log(play);
