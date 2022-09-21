@@ -1,1 +1,1 @@
-Jogo reversi versão 1.0v feito com html, css e javascript puro. Essa primeira versão precisa de muitas melhorias, porém, está contribuindo para o aprendizado.
+Jogo reversi versão 1.0v (em contrução) feito com html, css e javascript puro. Essa primeira versão precisa de muitas melhorias, porém, está contribuindo para a consolidação dos conhecimentos.
