@@ -872,13 +872,16 @@ function drawStone(element){
         if(pointCounter(squares).blackPoint == pointCounter(squares).whitePoint){
             winner = "Tied!";
         } else if(pointCounter(squares).blackPoint > pointCounter(squares).whitePoint){
-            winner = "Black win!";
+            winner = "Black wins!";
             player = 1;
         } else {
-            winner = "White win!";
-            player = 2;
+            winner = "White wins!";
+            player = 1;
         }
-        alert("Game Over! " + winner);
+        setTimeout(()=>{
+            alert("Game Over! " + winner);
+        }, 200)
+        
         play = false;
 
     }
