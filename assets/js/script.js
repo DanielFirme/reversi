@@ -904,12 +904,7 @@ drawPossibilities();
 
 const score = document.querySelectorAll('.score');
 score[0].innerHTML = pointCounter(squares).blackPoint;
-score[1].innerHTML = pointCounter(squares).whitePoint; 
-
-//for(id of ids){
-//   const element = document.getElementById(id);
-//   element.onclick = drawStone;
-//}
+score[1].innerHTML = pointCounter(squares).whitePoint;
 
 
 
