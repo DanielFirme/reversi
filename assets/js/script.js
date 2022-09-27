@@ -7,11 +7,12 @@ window.addEventListener('resize', () => {
 });
 
 let play = false;
+let player1, player2;
 
 function validationPlay(){
     //document.forms["setPlayers"].submit();
-    const player1 = document.forms["setPlayers"]["player_1"].value;
-    const player2 = document.forms["setPlayers"].player_2.value;
+    player1 = document.forms["setPlayers"]["player_1"].value;
+    player2 = document.forms["setPlayers"].player_2.value;
     console.log("Jogador 1: " + player1 + " - Jogador 2: " + player2);
     if(player1 != "" && player2 != ""){
         play = true;
@@ -25,7 +26,9 @@ function validationPlay(){
         setTimeout(()=>{
             document.querySelector('.container').style.display = 'none';
         }, 200);
-        
+        document.querySelector('.player-1 .name').innerHTML = player1
+        document.querySelector('.player-2 .name').innerHTML = player2
+
     } else {
         play = false;
         console.log(play);
@@ -366,8 +369,7 @@ function drawPossibilities(){
         return true;
     } else {
         return false;
-    }
-    
+    }   
 }
 
 function clearPossibilities(){
@@ -866,16 +868,17 @@ function drawStone(element){
     }
     console.log(`result = ${result}`);
 
-    console.log(pointCounter(squares));
+    score[0].innerHTML = pointCounter(squares).blackPoint;
+    score[1].innerHTML = pointCounter(squares).whitePoint; 
     
     if(result){
         if(pointCounter(squares).blackPoint == pointCounter(squares).whitePoint){
             winner = "Tied!";
         } else if(pointCounter(squares).blackPoint > pointCounter(squares).whitePoint){
-            winner = "Black wins!";
+            winner = `${player1} wins!`;
             player = 1;
         } else {
-            winner = "White wins!";
+            winner = `${player2} wins!`;
             player = 1;
         }
         setTimeout(()=>{
@@ -898,7 +901,11 @@ const squares = document.querySelectorAll(".square"); //Ele cria uma "NodeList",
 
 drawInitialStones();
 drawPossibilities();
-console.log(pointCounter(squares));
+
+const score = document.querySelectorAll('.score');
+score[0].innerHTML = pointCounter(squares).blackPoint;
+score[1].innerHTML = pointCounter(squares).whitePoint; 
+
 //for(id of ids){
 //   const element = document.getElementById(id);
 //   element.onclick = drawStone;
